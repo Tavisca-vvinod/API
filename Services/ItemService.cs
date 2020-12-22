@@ -10,6 +10,8 @@ namespace Services
     {
         public static GetItemsResponse GetItems()
         {
+            //if there are no items present in the database file, database layer will return empty layer
+            //then set status of response as failure and description as "Store is empty. No items"
             var items = ItemDataLayer.GetAvailableItems();
             var response = new GetItemsResponse();
             response.Items = items;
