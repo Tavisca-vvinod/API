@@ -4,8 +4,9 @@ using System.Text;
 
 namespace Entities
 {
-    public class GetItemsResponse
+    public class GetItemsResponse : Response
     {
-        public List<Item> Items;
+        public List<Item> Items { get; set; }
+
     }
 }

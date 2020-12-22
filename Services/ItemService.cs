@@ -10,16 +10,20 @@ namespace Services
     {
         public static GetItemsResponse GetItems()
         {
-            var items = ItemDataLayer.GetItemsList();
+            var items = ItemDataLayer.GetAvailableItems();
             var response = new GetItemsResponse();
             response.Items = items;
+            response.Status = "success";
             return response;
         }
 
-        public static Item GetItemById(int id)
+        public static GetItemsResponse GetItemById(int id)
         {
-            var items = ItemDataLayer.GetItemById(id);
-            return items;
+            var item = ItemDataLayer.GetItemById(id);
+            var response = new GetItemsResponse();
+            response.Items = new List<Item>();
+            response.Items.Add(item);
+            return response;
         }
     }
 }

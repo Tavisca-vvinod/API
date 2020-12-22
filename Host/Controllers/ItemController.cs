@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Contracts;
-using Contracts.Translators;
+using Entities;
 using Microsoft.AspNetCore.Mvc;
 using Services;
 
@@ -18,15 +17,15 @@ namespace Host.Controllers
         public GetItemsResponse GetItems()
         {
             var responseFromService = ItemService.GetItems();
-            return responseFromService.ToDataContract();
+            return responseFromService;
         }
 
         //GET api/items/itemId
         [HttpGet("{id}")]
-        public Item GetItemByItemId(int id)
+        public GetItemsResponse GetItemByItemId(int id)
         {
             var responseFromService = ItemService.GetItemById(id);
-            return responseFromService.ToDataContract();
+            return responseFromService;
         }
     }
 }
