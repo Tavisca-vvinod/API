@@ -15,6 +15,12 @@ namespace Services
             //Hello 
             var items = ItemDataLayer.GetAvailableItems();
             var response = new GetItemsResponse();
+            if (items.Count == 0)
+            {
+                response.Status = "Faliure";
+                response.Description = "Store is empty";
+                return response;
+            }
             response.Items = items;
             response.Status = "success";
             return response;
