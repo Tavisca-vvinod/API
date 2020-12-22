@@ -19,8 +19,23 @@ namespace Services
 
         public static GetItemsResponse GetItemById(int id)
         {
-            var item = ItemDataLayer.GetItemById(id);
+            
             var response = new GetItemsResponse();
+
+            if (id == 0)
+            {
+                response.Status = "Failure";
+                response.Description = "Invalid item id";
+                return response;
+            }
+
+            var item = ItemDataLayer.GetItemById(id);
+            if (item == null)
+            {
+                response.Status = "Failure";
+                response.Description = "Invalid item id";
+                return response;
+            }
             response.Items = new List<Item>();
             response.Items.Add(item);
             return response;
