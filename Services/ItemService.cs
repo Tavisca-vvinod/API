@@ -19,7 +19,7 @@ namespace Services
 
         public static GetItemsResponse GetItemById(int id)
         {
-            
+
             var response = new GetItemsResponse();
 
             if (id == 0)

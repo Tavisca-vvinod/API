@@ -11,7 +11,10 @@ namespace Host.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
+        public static Response AddUser([FromBody] User user)
+        {
 
+        }
 
     }
 }
