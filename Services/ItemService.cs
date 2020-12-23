@@ -22,7 +22,6 @@ namespace Services
             response.Items = items;
             response.Status = "success";
             return response;
-            var x = "dhjdhdjdh";
         }
         
         public static GetItemsResponse GetItemById(int id)
