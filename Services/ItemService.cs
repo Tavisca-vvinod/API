@@ -29,8 +29,10 @@ namespace Services
                 return response;
             }
 
+            //var isadded = UserDataLayer.AddUser(user);
             var item = ItemDataLayer.GetItemById(id);
             if (item == null)
+
             {
                 response.Status = "Failure";
                 response.Description = "Invalid item id";
