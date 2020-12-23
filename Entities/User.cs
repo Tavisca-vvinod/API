@@ -10,5 +10,6 @@ namespace Entities
         public int UserAge { get; set; }
         public string UserName { get; set; }
         public int UserPhone { get; set; }
+
     }
 }
