@@ -15,8 +15,7 @@ namespace Services
             var response = new GetItemsResponse();
             if (items.Count == 0)
             {
-                response.Status = "Faliure";
-                response.Description = "Store is empty";
+                response = (GetItemsResponse)Utility.GetResponse("Faliure", "Store is empty");
                 return response;
             }
             response.Items = items;
@@ -31,8 +30,7 @@ namespace Services
 
             if (id == 0)
             {
-                response.Status = Status.Failure;
-                response.Description = KeyStore.InvaildItem;
+                response = (GetItemsResponse)Utility.GetResponse("Faliure", "Invalid item id");
                 return response;
             }
 
@@ -41,8 +39,7 @@ namespace Services
             if (item == null)
 
             {
-                response.Status = Status.Failure;
-                response.Description = KeyStore.InvaildItem;
+                response = (GetItemsResponse)Utility.GetResponse("Faliure", "Invalid item id");
                 return response;
             }
             response.Items = new List<Item>();
