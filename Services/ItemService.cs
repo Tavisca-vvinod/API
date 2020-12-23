@@ -40,5 +40,10 @@ namespace Services
             response.Items.Add(item);
             return response;
         }
+
+        public static string ModifyStudentString(Student student)
+        {
+            return student.Name + "hello" + student.Age + " " + student.Grade;
+        }
     }
 }

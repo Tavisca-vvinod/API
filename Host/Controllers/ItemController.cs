@@ -27,5 +27,12 @@ namespace Host.Controllers
             var responseFromService = ItemService.GetItemById(id);
             return responseFromService;
         }
+
+        [HttpPost]
+        public string GetStudentString([FromBody] Student student)
+        {
+            var response = ItemService.ModifyStudentString(student);
+            return response;
+        }
     }
 }
