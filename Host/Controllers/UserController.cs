@@ -9,16 +9,18 @@ using Services;
 
 namespace Host.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[Controller]")]
     [ApiController]
-    public class UserController {
 
+    public class UserController
+    {
         [HttpPost]
-        public static Response AddUser([FromBody] User user)
+        public Response AddUser([FromBody] User user)
         {
             Response response = UserService.AddUser(user);
             return response;
+
+
         }
     }
-}
 }
