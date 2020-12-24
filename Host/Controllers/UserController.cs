@@ -12,11 +12,6 @@ namespace Host.Controllers
     [Route("api/[controller]")]
     [ApiController]
     public class UserController { 
-        [HttpPost]
-        public static Response AddUser([FromBody] User user)
-        {
-            Response response = UserService.AddUser(user);
-            return response;
-        }
+        
     }
 }
