@@ -10,10 +10,10 @@ namespace Data
     {
         public static bool AddUser(User user)
         {
-            string path = "insert local file path here";
+            string path = "C:\\Users\\Havock\\RiderProjects\\API2\\Data\\Users.txt";
 
             StreamWriter writer = new StreamWriter(path, true);
-            writer.WriteLine(user.UserEmailId + "," + user.UserPhone + "," + user.UserName + "," + user.UserAge);
+            writer.WriteLine(user.UserEmailId + "," + user.UserPhone + "," + user.UserName);
             writer.Close();
 
             return true;

@@ -1,5 +1,0 @@
-﻿1) Create User controller - post method, takes user as request, returns response class
-2) Create user class - contains all fields
-3) Create user service - verify the request, call data layer to add,
-4) Create user data layer - use stream reader and add the user into user.txt
-5) Create user.txt

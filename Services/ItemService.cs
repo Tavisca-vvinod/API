@@ -29,7 +29,7 @@ namespace Services
                 return response;
             }
 
-            //var isadded = UserDataLayer.AddUser(user);
+            
             var item = ItemDataLayer.GetItemById(id);
             if (item == null)
 
@@ -43,9 +43,6 @@ namespace Services
             return response;
         }
 
-        public static string ModifyStudentString(Student student)
-        {
-            return student.Name + "hello" + student.Age + " " + student.Grade;
-        }
+        
     }
 }

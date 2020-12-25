@@ -10,9 +10,16 @@ namespace Services
     {
         public static Response AddUser(User user)
         {
+            Response response = new Response();
+            if (String.IsNullOrEmpty(user.UserName) || user.UserPhone.Length < 10)
+            {
+                response.Status = "Failure";
+                response.Description = "Invalid user deatils";
+            }
+
             bool IsAdded = UserDataLayer.AddUser(user);
 
-            Response response = new Response();
+            
             if(IsAdded == true)
             {
                 response.Status = "Success!";
