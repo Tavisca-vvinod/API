@@ -11,33 +11,44 @@ namespace Services
         public static Response AddUser(User user)
         {
             Response response = new Response();
-            if (String.IsNullOrEmpty(user.UserName) || user.UserPhone.Length < 10)
+            if (String.IsNullOrEmpty(user.Name) || user.Phone.Length < 10)
             {
                 response.Status = "Failure";
                 response.Description = "Invalid user deatils";
             }
 
-            bool IsAdded = UserDataLayer.AddUser(user);
+            var usersFromFile = UserDataLayer.GetUserFromFile();
 
-            
-            if(IsAdded == true)
+
+
+            try
             {
-                response.Status = "Success!";
-                response.Description = "User added to database";
-                return response;
+                bool IsAdded = UserDataLayer.AddUser(user);
+
+
+                if (IsAdded == true)
+                {
+                    response.Status = KeyStore.Success;
+                    response.Description = KeyStore.UserAdded;
+                    return response;
+                }
+                else
+                {
+                    response.Status = KeyStore.Failure;
+                    response.Description = KeyStore.EmailExists;
+                    return response;
+                }
+
+
             }
-            else
+            catch (Exception e)
             {
-                response.Status = "Failure";
-                response.Description = "The user could not be added to the databse";
+                response.Status = KeyStore.Failure;
+                response.Description = KeyStore.UserNotAdded;
                 return response;
+
+
             }
-
-
         }
-
-
-
-            
     }
 }

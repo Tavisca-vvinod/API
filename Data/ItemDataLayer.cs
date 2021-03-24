@@ -42,7 +42,7 @@ namespace Data
                 str = sr.ReadLine();
             }
 
-             
+            
             sr.Close();
 
             return items;

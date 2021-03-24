@@ -6,9 +6,15 @@ namespace Entities
 {
     public class User
     {
-        public string UserEmailId { get; set; }
-        public string UserName { get; set; }
-        public string UserPhone { get; set; }
+        public string EmailId { get; set; }
+        public string Name { get; set; }
+        public string ID { get; set; }
+        public string Phone { get; set; }
+        public string Password { get; set; }
 
+        public static implicit operator string(User v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
