@@ -20,32 +20,36 @@ namespace Services
                 return response;
             }
             response.Items = items;
-            response.Status = "success";
+            response.Status = Status.Success;
             return response;
         }
         
         public static GetItemsResponse GetItemById(int id)
         {
-            
+
             var response = new GetItemsResponse();
 
             if (id == 0)
             {
-                response.Status = "Failure";
-                response.Description = "Invalid item id";
+                response.Status = Status.Failure;
+                response.Description = KeyStore.InvaildItem;
                 return response;
             }
 
+            
             var item = ItemDataLayer.GetItemById(id);
             if (item == null)
+
             {
-                response.Status = "Failure";
-                response.Description = "Invalid item id";
+                response.Status = Status.Failure;
+                response.Description = KeyStore.InvaildItem;
                 return response;
             }
             response.Items = new List<Item>();
             response.Items.Add(item);
             return response;
         }
+
+        
     }
 }

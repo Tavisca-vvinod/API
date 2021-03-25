@@ -2,8 +2,12 @@
 {
     public class Response
     {
-        public string Status { get; set; } //can either be success or failure
+        public Status Status { get; set; }
 
-        public string Description { get; set; } //adds description if failure
+        public string Description { get; set; }
+    }
+    public enum Status
+    {
+        Success, Failure
     }
 }
