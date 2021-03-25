@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using Entities;
 using System.IO;
-
+using System.Web;
 namespace Data
+
 {
     public class UserDataLayer
     {
@@ -33,18 +34,16 @@ namespace Data
                         return false;
                     }
                 }
-                reader.Close();
             }
 
-
+            var encryptedPassword = Utility.Encryption(user.Password);
             StreamWriter writer = new StreamWriter("C:\\Users\\Havock\\RiderProjects\\API2\\Data\\Users.txt", true);
-            writer.WriteLine(user.EmailId + "#," + user.Phone + "," + user.Name);
+            writer.WriteLine(user.EmailId + "#," + user.Phone + "," + user.Name+','+encryptedPassword);
             writer.Close();
 
             
 
             return true;
-
         }
     }
 }
