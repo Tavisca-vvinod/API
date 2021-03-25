@@ -2,8 +2,8 @@
 {
     public class Response
     {
-        public string Status { get; set; } //can either be success or failure
+        public string Status { get; set; }
 
-        public string Description { get; set; } //adds description if failure
+        public string Description { get; set; }
     }
 }

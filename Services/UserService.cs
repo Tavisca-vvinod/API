@@ -13,8 +13,8 @@ namespace Services
             Response response = new Response();
             if (String.IsNullOrEmpty(user.Name) || user.Phone.Length < 10)
             {
-                response.Status = "Failure";
-                response.Description = "Invalid user deatils";
+                response.Status = KeyStore.Failure;
+                response.Description = KeyStore.InvalidDetails;
             }
 
             var usersFromFile = UserDataLayer.GetUserFromFile();

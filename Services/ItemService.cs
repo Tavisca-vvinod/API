@@ -13,7 +13,7 @@ namespace Services
             var items = ItemDataLayer.GetAvailableItems();
             var response = new GetItemsResponse();
             response.Items = items;
-            response.Status = "success";
+            response.Status = KeyStore.Success;
             return response;
         }
 
@@ -24,8 +24,8 @@ namespace Services
 
             if (id == 0)
             {
-                response.Status = "Failure";
-                response.Description = "Invalid item id";
+                response.Status = KeyStore.Failure;
+                response.Description = KeyStore.InvaildItem;
                 return response;
             }
 
@@ -34,8 +34,8 @@ namespace Services
             if (item == null)
 
             {
-                response.Status = "Failure";
-                response.Description = "Invalid item id";
+                response.Status = KeyStore.Failure;
+                response.Description = KeyStore.InvaildItem;
                 return response;
             }
             response.Items = new List<Item>();

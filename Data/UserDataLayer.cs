@@ -8,8 +8,7 @@ namespace Data
 {
     public class UserDataLayer
     {
-        //1. GetUserFromFile() - only read and return the list of users
-        //2. AddUser() - call the first method , do validations. if okay. then add line by line
+        
         
         public static List<User> GetUserFromFile()
         {
@@ -42,7 +41,7 @@ namespace Data
             writer.WriteLine(user.EmailId + "#," + user.Phone + "," + user.Name);
             writer.Close();
 
-            //check if email id exists: return false
+            
 
             return true;
 

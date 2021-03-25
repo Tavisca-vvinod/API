@@ -12,9 +12,6 @@ namespace Entities
         public string Phone { get; set; }
         public string Password { get; set; }
 
-        public static implicit operator string(User v)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }
