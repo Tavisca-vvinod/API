@@ -13,7 +13,7 @@ namespace Services
             Response response = new Response();
             if (String.IsNullOrEmpty(user.Name) || user.Phone.Length < 10)
             {
-                response.Status = KeyStore.Failure;
+                response.Status = Status.Failure;
                 response.Description = KeyStore.InvalidDetails;
             }
 
@@ -28,13 +28,13 @@ namespace Services
 
                 if (IsAdded == true)
                 {
-                    response.Status = KeyStore.Success;
+                    response.Status = Status.Success;
                     response.Description = KeyStore.UserAdded;
                     return response;
                 }
                 else
                 {
-                    response.Status = KeyStore.Failure;
+                    response.Status = Status.Failure;
                     response.Description = KeyStore.EmailExists;
                     return response;
                 }
@@ -43,7 +43,7 @@ namespace Services
             }
             catch (Exception e)
             {
-                response.Status = KeyStore.Failure;
+                response.Status = Status.Failure;
                 response.Description = KeyStore.UserNotAdded;
                 return response;
 
