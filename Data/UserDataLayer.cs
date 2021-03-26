@@ -45,5 +45,12 @@ namespace Data
 
             return true;
         }
+
+        public static string ValidateUser(LoginRequest request)
+        {
+            //Validate ID password
+            //if valid,
+            //call token data layer.generate GUID method 
+        }
     }
 }

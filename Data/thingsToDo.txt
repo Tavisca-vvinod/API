@@ -1,0 +1,4 @@
+﻿1) ask for password from body
+2) generate GUID as token
+3)save GUID as string in token.txt
+
