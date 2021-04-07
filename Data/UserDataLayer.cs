@@ -64,11 +64,6 @@ namespace Data
                         string token = TokenDataLayer.GenerateAndSaveToken();
                         return token;
                     }
-                    else
-                    {
-                        return null;
-                    }
-
                 }
                 reader.Close();
                 return null;

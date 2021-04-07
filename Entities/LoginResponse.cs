@@ -6,7 +6,7 @@ namespace Entities
 {
     public class LoginResponse: Response
     {
-        string Token { get; set; }
+        public string Token { get; set; }
 
     }
 }

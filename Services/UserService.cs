@@ -61,6 +61,12 @@ namespace Services
                 response.Description = KeyStore.LoginFailed;
 
             }
+            else
+            {
+                response.Status = Status.Success;
+                response.Description = KeyStore.LoginSuccessful;
+                response.Token = token;
+            }
             return response;
         }
     }
