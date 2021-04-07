@@ -12,5 +12,7 @@ namespace Entities
         public const string UserNotAdded = "User not added to the database";
         public const string InvalidDetails = "Invalid details added";
         public const string InvalidItem = "Invaild item ID";
+        public const string LoginFailed = "Your email id or password is incorrect.";
+        public const string LoginSuccessful = "Successfully logged in";
     }
 }

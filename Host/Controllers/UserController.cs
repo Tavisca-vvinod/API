@@ -22,5 +22,12 @@ namespace Host.Controllers
 
 
         }
+        [HttpPost]
+        [Route("login")]
+        public LoginResponse Login([FromBody] LoginRequest request)
+        {
+            LoginResponse response = UserService.Login(request);
+            return response;
+        }
     }
 }

@@ -18,6 +18,7 @@ namespace Services
             }
 
             var usersFromFile = UserDataLayer.GetUserFromFile();
+            var token = TokenDataLayer.GenerateAndSaveToken();
 
 
 
@@ -49,6 +50,24 @@ namespace Services
 
 
             }
+        }
+        public static LoginResponse Login(LoginRequest request)
+        {
+            string token = UserDataLayer.ValidateUser(request);
+            LoginResponse response = new LoginResponse();
+            if (String.IsNullOrWhiteSpace(token))
+            {
+                response.Status = Status.Failure;
+                response.Description = KeyStore.LoginFailed;
+
+            }
+            else
+            {
+                response.Status = Status.Success;
+                response.Description = KeyStore.LoginSuccessful;
+                response.Token = token;
+            }
+            return response;
         }
     }
 }
